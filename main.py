@@ -10,7 +10,7 @@ class WidgetArt(QMainWindow):
     def __init__(self):
         super().__init__()
         uic.loadUi('UI.ui', self)
-        self.setFixedSize(500,500)
+        self.setFixedSize(500, 500)
         self.do_paint = False
         self.pushButton.clicked.connect(self.paint)
 
@@ -27,8 +27,12 @@ class WidgetArt(QMainWindow):
         self.update()
 
     def draw_circle(self, qp):
-        qp.setBrush(QColor(255, 255, 0))
-        r = randint(1,100)
+        red = randint(1, 255)
+        green = randint(1, 255)
+        blue = randint(1, 255)
+
+        qp.setBrush(QColor(red, green, blue))
+        r = randint(1, 100)
         qp.drawEllipse(200, 200, r, r)
 
 
